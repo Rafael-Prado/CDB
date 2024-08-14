@@ -4,6 +4,7 @@ Essa aplicação simula o retorno do valor bruto e valor liquido de uma aplicaç
 🚀 Começando
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 📋 Pré-requisitos
+
 .Net 8.0
 .SQL Server- localhost
 .Angular 8.
@@ -14,6 +15,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 Dar exemplos
 🔧 Rodar no visual studio
+
 Configurar para o projeto para starta multiplos projeto :
 .CalculloCdbApi - Api DotNet;
 .CalculoCdb - Angular;
