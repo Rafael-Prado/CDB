@@ -12,8 +12,10 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 .SQL Server- localhost
 .Angular 8.
 
-.Assim que baixar o projeto configurar a string de conexão com banco e rodar as migrations.
+.Assim que baixar o projeto configurar a string de conexão com banco e rodar as migrations
+
 .Abrir o cmd no projeto  CdbInfra;
+
 .Rodar o comando Update-Database, esse comando vai criar as tabelas e inserir dados iniciais na base.
 
 Dar exemplos
@@ -23,6 +25,7 @@ Dar exemplos
 Configurar para o projeto para starta multiplos projeto :
 
 .CalculloCdbApi - Api DotNet;
+
 .CalculoCdb - Angular;
 
 
