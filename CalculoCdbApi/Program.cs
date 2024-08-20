@@ -14,10 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-string connectionString = builder.Configuration.GetConnectionString("CnnStr");
+//string connectionString = builder.Configuration.GetConnectionString("CnnStr");
 
-builder.Services.AddDbContext<CdbContext>(
-                options => options.UseSqlServer(connectionString)); 
+//builder.Services.AddDbContext<CdbContext>(
+//                options => options.UseSqlServer(connectionString)); 
 
 //Services
 builder.Services.AddTransient<IInvestimentoService, InvestimentoService>();

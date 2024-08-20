@@ -6,34 +6,26 @@ namespace CdbInfra.Repository
 {
     public class InvestimentoRepository : IInvestimentoRepository
     {
-        private readonly CdbContext _context;
-        public InvestimentoRepository(CdbContext ctx)
-        {
-                _context = ctx;
-        }     
+        private const decimal TB = 1.08M;
+        private const decimal CDI = 0.009M;
+           
 
         public decimal GetTaxaMes(int mes)
         {
-            var taxas= _context.TaxaMensal.ToList();
-
-            var taxa = taxas.Find(x => x.Meses == mes);
-            var taxaAplicada = decimal.Zero;
-            if (taxa == null)
+            var taxaAplicada = mes switch
             {
-                taxaAplicada = taxas.First(x => x.Meses == 0).Taxa;
-            }
-            else {
-                taxaAplicada = taxa.Taxa;
-            }
+                <= 6 => 0.225M,
+                <= 12 => 0.20M,
+                <= 24 => 0.175M,
+                _ => 0.15M
+            };
+
             return taxaAplicada;
         }
 
         public Tuple<decimal, decimal> GetTbCdi()
         {
-            var taxa = _context.TaxaBancarias.FirstOrDefault();
-            if (taxa == null)
-                return Tuple.Create(decimal.Zero, decimal.Zero);
-            return Tuple.Create(taxa.Cdb, taxa.Tb);
+            return Tuple.Create(CDI, TB);
         }
     }
 }
